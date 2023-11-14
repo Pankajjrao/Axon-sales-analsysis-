@@ -34,18 +34,6 @@ select firstName,lastName
 from employees 
 where JobTitle = 'President';
 
--- Checking the no of missing values column wise?
-SELECT
-  COUNT(*) - COUNT(employeeNumber) as Missing_employeeNumber,
-  COUNT(*) - COUNT(lastName) as Missing_lastName,
-  COUNT(*) - COUNT(firstName) as Missing_firstName,
-  COUNT(*) - COUNT(extension) as Missing_extension,
-  COUNT(*) - COUNT(email) as Missing_email,
-  COUNT(*) - COUNT(officeCode) as Missing_officeCode,
-  COUNT(*) - COUNT(reportsTo)-1 as Missing_reportsTo, -- because there is a president who reports to no one
-  COUNT(*) - COUNT(jobTitle) as Missing_jobTitle
-FROM employees;
-
 -- -----------------------------------------------------------------------------------------------------------------------------------------
 
 describe offices;
